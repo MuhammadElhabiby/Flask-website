@@ -1,0 +1,192 @@
+body {
+    font-family: 'Pico', sans-serif;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.plan-view img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    width: 100%; /* Makes the input take full width */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+}
+
+button {
+    align-self: flex-end;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.progress-container {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    width: 100%;
+    height: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* This value will be adjusted dynamically */
+    }
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #28a745;
+    border-radius: 10px;
+    transition: width 0.3s;
+
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+
+.image-container img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    max-height: 400px; /* Adjust this value to control the maximum height */
+    width: auto; /* Ensures the aspect ratio is maintained */
+    border-radius: 10px;
+    border: 2px solid #ddd; /* Optional for a subtle border */
+}
+
+
+
+h2 {
+    margin-top: 20px;
+    color: #444;
+}
+
+.progress-section {
+    margin: 30px 0;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .image-container img {
+        max-height: 300px; /* Adjust this value as needed for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container img {
+        max-height: 200px; /* Reduce height further for very small screens */
+    }
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensures children take full width */
+    gap: 10px; /* Optional: adds space between elements */
+}
+
+.center-text {
+    text-align: center; /* Centers the text */
+    margin-top: 20px;   /* Optional: adds space above */
+    margin-bottom: 20px; /* Optional: adds space below */
+    color: #444;        /* Optional: adjust color for better appearance */
+}
+
+.progress-container {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    width: 90%;
+    height: 20px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+.progress-bar {
+    height: 100%;
+    background-color: #259cc4;
+    border-radius: 0;
+    transition: width 0.3s;
+}
+
+.milestones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction */
+}
+
+.milestone {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 2px; /* Adjust width for a thin line */
+    background-color: #444; /* Color of the milestone */
+    opacity: 0.5; /* Slightly transparent */
+}
+
+.milestone-photos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.milestone-photo {
+    text-align: center;
+}
+
+.milestone-photo img {
+    max-width: 50px; /* Adjust size as needed */
+    height: auto;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
