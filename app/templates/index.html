@@ -30,30 +30,39 @@
         <div class="container">
           <div class="row">
             <!-- Apartment Image Section -->
-            <div class="col-lg-7">
+            <div class="col-lg-6">
               <img
                 src="{{ url_for('static', filename='wohnung.PNG') }}"
                 alt="Apartment Plan View"
               />
             </div>
             <!-- List Section -->
-            <div class="col-lg-5">
+            <div class="col-lg-6">
               <ul class="list-group">
-                <p>Beispiele:</p>
+                <p>Beispiele</p>
                 <li class="list-group-item">
-                  Mach die Heizung im Wohnzimmer an
+                  Mach <span class="device">die Heizung</span> im
+                  <span class="location">Wohnzimmer</span> an
                 </li>
                 <li class="list-group-item">
-                  Deckenleuchte im Badezimmer anschalten
+                  <span class="device">Deckenleuchte</span> im
+                  <span class="location">Badezimmer</span>
+                  anschalten
                 </li>
                 <li class="list-group-item">
-                  Jalousie im Schlafzimmer nach 22:00 Uhr herunter fahren
+                  <span class="device">Jalousie</span> im
+                  <span class="location">Schlafzimmer</span>
+                  <span class="condition">nach 22:00 Uhr</span> herunter fahren
                 </li>
                 <li class="list-group-item">
-                  Jalousie im Schlafzimmer bei Regen schliessen
+                  <span class="device">Jalousie</span> im
+                  <span class="location">Schlafzimmer</span> bei
+                  <span class="condition">Regen</span>
+                  schließen
                 </li>
                 <li class="list-group-item">
-                  Nach 01:00 Uhr alle Leuchten ausschalten
+                  <span class="condition">Nach 01:00 Uhr</span> alle
+                  <span class="device">Leuchten</span> ausschalten
                 </li>
               </ul>
               <div class="d-flex justify-content-center mt-3">
