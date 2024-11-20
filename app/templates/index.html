@@ -44,9 +44,28 @@
                   Mach die Heizung im Wohnzimmer an
                 </li>
                 <li class="list-group-item">
-                  Mach die Deckenleucht in der Küche an
+                  Deckenleuchte im Badezimmer anschalten
+                </li>
+                <li class="list-group-item">
+                  Jalousie im Schlafzimmer nach 22:00 Uhr herunter fahren
+                </li>
+                <li class="list-group-item">
+                  Jalousie im Schlafzimmer bei Regen schliessen
+                </li>
+                <li class="list-group-item">
+                  Nach 01:00 Uhr alle Leuchten ausschalten
                 </li>
               </ul>
+              <div class="d-flex justify-content-center mt-3">
+                <a
+                  href="{{ url_for('static', filename='wohnung.PNG') }}"
+                  target="_blank"
+                  style="margin-top: 10px; cen"
+                  ><button type="button" class="btn btn-dark">
+                    Foto im größer öffnen
+                  </button></a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -63,7 +82,7 @@
             <input
               type="text"
               name="text_input"
-              placeholder="Enter your prompt"
+              placeholder="Smart Home Kommando eingeben"
               required
               autofocus
             />
@@ -102,6 +121,19 @@
 
         <p>{{ entries }}/20 Prompts erfolgreich abgeschickt</p>
       </section>
+
+      <!-- Prompts added -->
+
+      <div class="container">
+        <div>
+          <p>Eingegebene Prompts</p>
+          <ul class="list-group">
+            {% for prompt in prompts %}
+            <li class="list-group-item">{{ prompt }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
 
       <!-- Final goal popup -->
       <div

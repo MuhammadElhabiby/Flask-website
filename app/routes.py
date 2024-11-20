@@ -8,17 +8,24 @@ main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET', 'POST'])
 def home():
+    # Initialize session variables if they don't exist
     if 'entry_count' not in session:
         session['entry_count'] = 0
+    if 'prompts' not in session:
+        session['prompts'] = []  # Initialize an empty list to store prompts
 
     if request.method == 'POST':
         prompt_content = request.form.get('text_input')
 
         if prompt_content:
+            # Save the user's prompt to the database
             new_entry = UserPrompt(prompt=prompt_content)
             db.session.add(new_entry)
             db.session.commit()
+
+            # Update session-specific variables
             session['entry_count'] += 1
+            session['prompts'].append(prompt_content)  # Add the new prompt to the session list
 
         return redirect(url_for('main.home'))
 
@@ -35,4 +42,11 @@ def home():
     image_files = [f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))]
     random_image = random.choice(image_files) if image_files else None
 
-    return render_template('index.html', progress=progress, entries=session['entry_count'], final_image=random_image)
+    # Pass session-specific prompts to the template
+    return render_template(
+        'index.html',
+        progress=progress,
+        entries=session['entry_count'],
+        prompts=session['prompts'],  # Pass the list of prompts to the template
+        final_image=random_image
+    )

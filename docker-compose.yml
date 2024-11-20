@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   web:
@@ -6,12 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"  # Map container's port 5000 to host's port 5000
+      - "5000:5000" # Map container's port 5000 to host's port 5000
     volumes:
-      - .:/app       # Mount current directory to container for live updates
-      - db_data:/app/db  # Persistent storage for SQLite database
+      - .:/app # Mount current directory to container for live updates
+      #- db_data:/app/db # Persistent storage for SQLite database
+      - ./db:/app/db
     environment:
-      - FLASK_ENV=production  # Ensure production mode is set
+      - FLASK_ENV=production # Ensure production mode is set
 
 volumes:
   db_data:

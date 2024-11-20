@@ -1,5 +1,5 @@
 from app import create_app, db
-from app.models import TextEntry
+from app.models import UserPrompt
 import os
 
 app = create_app()
